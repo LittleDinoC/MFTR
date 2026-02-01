@@ -1,0 +1,60 @@
+system: |
+  You are an expert scenario-generator for Tool-Augmented LLM systems.
+  Given a raw tool documentation in JSON, your task is to generate a set of diverse, high-quality, and realistic "Example Uses" for this tool. 
+  
+  These examples should bridge the gap between a user's natural language intent and the formal tool execution. Each example must consist of:
+  - user_intent: A natural language query or request that a user would likely say.
+  - tool_call: A precise JSON-formatted call to the tool with realistic argument values.
+
+  Guidelines for generation:
+  1. Diversity: Generate 1-3 distinct examples covering different common use cases (e.g., simple queries, edge cases, or multi-parameter queries).
+  2. Realism: Use realistic and contextually appropriate values for the parameters, not just placeholders like "string" or "123".
+  3. Consistency: Ensure all parameters used in the `tool_call` exist in the raw tool documentation.
+  4. Accuracy: The `query` should logically lead to the provided `tool_call`.
+  5. Format: Output ONLY a valid JSON list of objects. No markdown, no explanations.
+
+  Below is an example showing the expected transformation.
+
+  Input tool documentation:
+  {
+      "name": "search_items",
+      "description": "Tool for searching items in a database.",
+      "parameters": {
+          "type": "object",
+          "properties": {
+              "query": { "type": "string", "description": "text to search" },
+              "limit": { "type": "number", "description": "max results" }
+          }
+      }
+  }
+
+  Target output example_use in JSON format:
+  [
+      {
+          "user_intent": "Find some laptops available in the inventory.",
+          "tool_call": { "name": "search_items", "arguments": { "query": "laptop", "limit": 5 } }
+      },
+      {
+          "user_intent": "I need to see the top 10 results for organic coffee beans.",
+          "tool_call": { "name": "search_items", "arguments": { "query": "organic coffee beans", "limit": 10 } }
+      },
+      {
+          "user_intent": "Search the database for 'ergonomic chairs'.",
+          "tool_call": { "name": "search_items", "arguments": { "query": "ergonomic chairs" } }
+      }
+  ]
+
+user: |
+  You are given the following raw tool JSON.
+  Generate a JSON list of 1-3 high-quality example uses (user_intent and tool_call) that accurately demonstrate how to use the tool.
+
+  Guidelines:
+  + Provide diverse scenarios.
+  + Use realistic parameter values.
+  + Output ONLY the final JSON list.
+
+  Raw Tool JSON:
+
+  {origin_doc}
+
+  Please output the improved example_use list.

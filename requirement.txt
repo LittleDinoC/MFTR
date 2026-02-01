@@ -1,0 +1,30 @@
+sentence-transformers>=2.2.2
+rank_bm25>=0.2.2
+nltk>=3.8.1
+numpy>=1.24.3
+openai>=1.3.7
+termcolor
+torch==2.7.1
+transformers==4.56.0
+faiss-cpu
+beautifulsoup4
+bm25s
+wandb
+pandas
+matplotlib
+datasets
+pytrec_eval
+tabulate
+dotenv
+bm25s
+lightgbm
+vllm==0.10.1
+openpyxl
+dspy # PLUTo
+
+# OnlineRAG
+langchain_core
+langchain_openai
+
+rouge
+googletrans

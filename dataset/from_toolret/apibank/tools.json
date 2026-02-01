@@ -1,0 +1,4012 @@
+[
+    {
+        "id": "apibank_tool_0",
+        "documentation": {
+            "category": "对外影响 - 数据库操作",
+            "parameters": [
+                {
+                    "name": "username",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The username of the user."
+                },
+                {
+                    "name": "password",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The password of the user."
+                }
+            ],
+            "description": "\"Get user token API that takes two parameters - 'username' and 'password'. The 'username' parameter is used to identify the user and the 'password' parameter is used to authenticate the user's identity.\"",
+            "url": "apis/get_user_token.py",
+            "method": "GET",
+            "responses": {
+                "token": {
+                    "type": "str",
+                    "description": "The token generated upon successful authentication."
+                }
+            },
+            "name": "GetUserToken"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_1",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "username",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The username of the new user."
+                },
+                {
+                    "name": "password",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The password of the new user."
+                },
+                {
+                    "name": "email",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The email of the new user."
+                }
+            ],
+            "description": "\"API to register a new user with their username, password, and email.\"",
+            "url": "apis/register_user.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "RegisterUser"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_2",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The authentication token of the user."
+                }
+            ],
+            "description": "\"Delete account API that takes a token parameter which is the authentication token of the user making the deletion request.\"",
+            "url": "apis/delete_account.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "DeleteAccount"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_3",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "old_password",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The existing password of the user."
+                },
+                {
+                    "name": "new_password",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The new password to be set."
+                }
+            ],
+            "description": "\"Modify password API that takes two parameters - 'old_password' and 'new_password'. The 'old_password' parameter refers to the existing password and the 'new_password' parameter specifies the new password to be set.\"",
+            "url": "apis/modify_password.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ModifyPassword"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_4",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "username",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The username of the account."
+                },
+                {
+                    "name": "email",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The email address associated with the account."
+                }
+            ],
+            "description": "\"Forgot Password API that takes two parameters - 'username' and 'email'. The 'username' parameter refers to the username of the account for which the password is forgotten and the 'email' parameter specifies the email address associated with the account.\"",
+            "url": "apis/forgot_password.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ForgotPassword"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_5",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The user authentication token."
+                },
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content of the reminder."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The time at which the reminder should be triggered."
+                }
+            ],
+            "description": "\"Add a reminder API that allows users to create new reminders with the specified content and time.\"",
+            "url": "apis/add_reminder.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Indicates whether the request was successful or not."
+                }
+            },
+            "name": "AddReminder"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_6",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "A string that represents the user authorization token."
+                },
+                {
+                    "name": "reminder_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The unique identifier of the reminder to be deleted."
+                }
+            ],
+            "description": "\"Delete a reminder API that takes two parameters - 'token' and 'reminder_id'. The 'token' parameter is a string that represents the user authorization token and the 'reminder_id' parameter represents the unique identifier of the reminder to be deleted.\"",
+            "url": "apis/delete_reminder.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or failed."
+                }
+            },
+            "name": "DeleteReminder"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_7",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "reminder_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The identifier of the reminder."
+                },
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The updated content of the reminder."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The updated time for the reminder. Format: %Y-%m-%d"
+                }
+            ],
+            "description": "\"Modify an existing reminder API that takes three parameters - 'reminder_id', 'content' and 'time'. The 'reminder_id' parameter refers to the identifier of the reminder that needs to be modified, 'content' parameter refers to the updated description of the reminder, and 'time' parameter specifies the updated time of the reminder.\"",
+            "url": "apis/modify_reminder.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ModifyReminder"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_8",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "User authentication token."
+                }
+            ],
+            "description": "\"Get a list of all reminders API. This API takes a single parameter 'token' which is used for user authentication.\"",
+            "url": "apis/query_reminder.py",
+            "method": "GET",
+            "responses": {
+                "reminders": {
+                    "type": "list",
+                    "description": "List of all the user reminders."
+                }
+            },
+            "name": "QueryReminder"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_9",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content of the meeting."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The time of the meeting in the format YYYY-MM-DD HH:MM:SS."
+                },
+                {
+                    "name": "recipients",
+                    "in": "query",
+                    "schema": {
+                        "type": "List[str]",
+                        "default": null
+                    },
+                    "description": "A list of email addresses of the individuals that are invited to attend the meeting."
+                }
+            ],
+            "description": "\"Book a meeting API that takes three parameters - 'content', 'time' and 'recipients'. The 'content' parameter refers to the description of the meeting and the 'time' parameter specifies the time at which the meeting is scheduled. The 'recipients' parameter is a list of strings that contains the email addresses of the individuals that are invited to attend the meeting.\"",
+            "url": "apis/add_meeting.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "AddMeeting"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_10",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "meeting_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The ID of the meeting to be cancelled."
+                },
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The authorization token for accessing the meeting."
+                }
+            ],
+            "description": "\"Cancel a meeting API that takes two parameters - 'meeting_id' and 'token'. The 'meeting_id' parameter refers to the ID of the meeting that needs to be cancelled and the 'token' parameter specifies the authorization to access the meeting.\"",
+            "url": "apis/delete_meeting.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed."
+                }
+            },
+            "name": "DeleteMeeting"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_11",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "meeting_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The ID of the meeting to be modified."
+                },
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The new content of the meeting."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The new time for meeting. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "attendees",
+                    "in": "query",
+                    "schema": {
+                        "type": "List[str]",
+                        "default": null
+                    },
+                    "description": "The new attendees (their emails) for the meeting."
+                }
+            ],
+            "description": "\"Modify a meeting API that takes four parameters - 'meeting_id', 'content', 'time' and 'attendees'. The 'content' parameter refers to the new description of the meeting, 'time' parameter specifies the new time of the meeting, 'attendees' parameter is a list of email addresses of the new attendees who are invited to the meeting.\"",
+            "url": "apis/modify_meeting.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ModifyMeeting"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_12",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The authentication token."
+                }
+            ],
+            "description": "\"Query meeting API that takes one parameter - 'token'. The 'token' parameter refers to the authentication token to access the user's data.\"",
+            "url": "apis/query_meeting.py",
+            "method": "GET",
+            "responses": {
+                "meeting_list": {
+                    "type": "list",
+                    "description": "A list of meetings scheduled by the user."
+                }
+            },
+            "name": "QueryMeeting"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_13",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The authentication token."
+                },
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content of the agenda."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The time for the agenda. Format: %Y-%m-%d %H:%M:%S"
+                },
+                {
+                    "name": "location",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The location of the agenda."
+                }
+            ],
+            "description": "\"Add an agenda API that takes four parameters - 'content', 'time', 'location' and 'token'. The 'content' parameter refers to the description of the agenda, the 'time' parameter specifies the time at which the agenda will happen, the 'location' parameter refers to the venue of the agenda and the 'token' parameter is used for authentication.\"",
+            "url": "apis/add_agenda.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "AddAgenda"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_14",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "A security measure to check user authenticity."
+                },
+                {
+                    "name": "schedule_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The ID of the schedule to be deleted."
+                }
+            ],
+            "description": "\"Delete an agenda API that takes two parameters - 'token' and 'schedule_id'. The 'token' parameter is a security measure while the 'schedule_id' parameter specifies the schedule to be deleted.\"",
+            "url": "apis/delete_agenda.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "DeleteAgenda"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_15",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "schedule_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The ID of the schedule to be modified."
+                },
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The updated details of the agenda."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The updated time for the agenda."
+                },
+                {
+                    "name": "location",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The updated location of the agenda."
+                }
+            ],
+            "description": "\"A modify agenda API that takes four parameters - 'schedule_id', 'content', 'time' and 'location'. The 'schedule_id' parameter refers to the ID of the schedule that needs to be modified, the 'content' parameter refers to the updated details of the agenda, the 'time' parameter specifies the new time at which the agenda should be conducted and the 'location' parameter specifies the updated location of the agenda.\"",
+            "url": "apis/modify_agenda.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Indicates whether the modifying the agenda was successful or not."
+                }
+            },
+            "name": "ModifyAgenda"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_16",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "A string representing the user token."
+                }
+            ],
+            "description": "\"Query agenda API that allows you to get the user's agenda based on the incoming token.\"",
+            "url": "apis/query_agenda.py",
+            "method": "GET",
+            "responses": {
+                "agenda": {
+                    "type": "list",
+                    "description": "A list of dictionaries representing the user agenda. Each dictionary contains details of a single entry- date, time, and description of the event."
+                }
+            },
+            "name": "QueryAgenda"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_17",
+        "documentation": {
+            "category": "对外影响 - 数据库操作",
+            "parameters": [
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content of the task."
+                },
+                {
+                    "name": "priority",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The priority value to be assigned to the task."
+                }
+            ],
+            "description": "\"API that assigns priority to a task identified by its 'content' parameter.\"",
+            "url": "apis/assign_priority.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or failure message."
+                }
+            },
+            "name": "AssignPriority"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_18",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "Authentication token for the user."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The time for the alarm clock in the format of %Y-%m-%d %H:%M:%S."
+                }
+            ],
+            "description": "\"Add an alarm clock API that takes two parameters - 'token' and 'time'. The 'token' parameter authenticates the user and the 'time' parameter specifies the time at which the alarm should go off.\"",
+            "url": "apis/add_alarm.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "The status of the request - success or failed."
+                }
+            },
+            "name": "AddAlarm"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_19",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "timer_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The id of the alarm to be cancelled"
+                },
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "Token for user authentication"
+                }
+            ],
+            "description": "\"Cancel an alarm API that takes two parameters - 'timer_id' and 'token'. The 'timer_id' parameter refers to the id of the alarm to be cancelled and the 'token' parameter is used for user authentication.\"",
+            "url": "apis/delete_alarm.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "DeleteAlarm"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_20",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The authorization token."
+                },
+                {
+                    "name": "timer_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The id of the timer that needs to be modified."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The new time for the timer. Format: %Y-%m-%d %H:%M:%S"
+                }
+            ],
+            "description": "\"Modify an alarm API that takes three parameters - 'timer_id', 'time' and 'token'. The 'timer_id' parameter refers to the existing alarm that needs to be modified. The 'time' parameter specifies the new time at which the alarm should be triggered.\"",
+            "url": "apis/modify_alarm.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                },
+                "message": {
+                    "type": "str",
+                    "description": "Additional information about the status."
+                }
+            },
+            "name": "ModifyAlarm"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_21",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "A unique identifier for the user account."
+                }
+            ],
+            "description": "\"Query alarm API that takes one parameter - 'token'. The 'token' parameter is a unique identifier for the user account.\"",
+            "url": "apis/query_alarm.py",
+            "method": "GET",
+            "responses": {
+                "alarms": {
+                    "type": "list",
+                    "description": "A list of dictionaries representing the alarms for the user. Each dictionary contains the alarm details."
+                }
+            },
+            "name": "QueryAlarm"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_22",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The description of the event."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The time for the event. Format: %Y-%m-%d %H:%M"
+                }
+            ],
+            "description": "\"Check time conflict API that takes two parameters - 'content' and 'time'. The 'content' parameter refers to the description of the event and the 'time' parameter specifies the time at which the event is scheduled. This API checks whether there is a time conflict with existing events.\"",
+            "url": "apis/check_time_conflict.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Indicates whether there is a conflict or not. Possible values: conflict or no conflict"
+                }
+            },
+            "name": "CheckTimeConflict"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_23",
+        "documentation": {
+            "category": "获取信息 - 外界信息查询",
+            "parameters": [],
+            "description": "\"Get a list of today's tasks which are not completed yet.\"",
+            "url": "apis/get_today.py",
+            "method": "GET",
+            "responses": {
+                "tasks": {
+                    "type": "list",
+                    "description": "A list of task objects with their details."
+                }
+            },
+            "name": "GetToday"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_24",
+        "documentation": {
+            "category": "对外影响 - 数据库操作",
+            "parameters": [
+                {
+                    "name": "amount",
+                    "in": "query",
+                    "schema": {
+                        "type": "float",
+                        "default": null
+                    },
+                    "description": "The amount of money to be transferred."
+                },
+                {
+                    "name": "account",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The recipient account number."
+                },
+                {
+                    "name": "auth",
+                    "in": "query",
+                    "schema": {
+                        "type": "object",
+                        "default": null
+                    },
+                    "description": "The authentication object. Contains the user ID and password."
+                },
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The authentication token."
+                }
+            ],
+            "description": "\"API to transfer money between accounts. It requires the user to input the 'token' which is the user's authentication token, the 'amount' which specifies the amount of money to be transferred, the 'account' which is the recipient's account number, and the 'auth' which is the authentication object.\"",
+            "url": "apis/transfer.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "The status of the transfer operation. Either successful or failed."
+                }
+            },
+            "name": "Transfer"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_25",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "account",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The user’s bank account number."
+                },
+                {
+                    "name": "password",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The password for the bank account."
+                },
+                {
+                    "name": "name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the user."
+                },
+                {
+                    "name": "email",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The email address of the user."
+                }
+            ],
+            "description": "\"Open bank account API that takes four parameters: 'account', 'password', 'name' and 'email'. The 'account' parameter refers to the user's bank account number, the 'password' parameter refers to the user's password for the account, the 'name' parameter refers to the user's name and 'email' parameter refers to the user's email address.\"",
+            "url": "apis/open_bank_account.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Whether the bank account opening was successful or failed."
+                }
+            },
+            "name": "OpenBankAccount"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_26",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The access token required for authentication purposes and to identify the bank account to be deleted."
+                }
+            ],
+            "description": "\"Delete a bank account API that takes one parameter - 'token'. The 'token' parameter refers to the access token required for authentication purposes and to identify the bank account to be deleted.\"",
+            "url": "apis/delete_bank_account.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "DeleteBankAccount"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_27",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "account",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The user account number."
+                },
+                {
+                    "name": "password",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The user password to authenticate."
+                },
+                {
+                    "name": "name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The user name."
+                },
+                {
+                    "name": "email",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The user email address."
+                },
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The user authentication token."
+                }
+            ],
+            "description": "\"Modify bank account API that takes five parameters - 'account', 'password', 'name', 'email' and 'token'. The 'token' parameter is used for user authentication. The 'account' parameter refers to the user's account number and the 'password' parameter is used to authenticate the user. The 'name' parameter refers to the user's name and the 'email' parameter refers to the user's email address.\"",
+            "url": "apis/modify_bank_account.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ModifyBankAccount"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_28",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "account",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The bank account number to be queried."
+                },
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The authentication token of the user making the request."
+                }
+            ],
+            "description": "\"A query bank account API that takes two parameters - 'account' and 'token'. The 'account' parameter refers to the bank account number that needs to be queried and the 'token' parameter is used to authenticate the user making the request.\"",
+            "url": "apis/query_bank_account.py",
+            "method": "GET",
+            "responses": {
+                "bank_name": {
+                    "type": "str",
+                    "description": "The name of the bank the account is associated with."
+                },
+                "account_type": {
+                    "type": "str",
+                    "description": "The account type - savings, current, etc."
+                },
+                "balance": {
+                    "type": "float",
+                    "description": "The available balance in the account."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "Success or Failed"
+                }
+            },
+            "name": "QueryBankAccount"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_29",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "currency_type",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The type of currency for which the exchange rate is to be queried."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The date and time at which the exchange rate is to be retrieved."
+                }
+            ],
+            "description": "\"QueryExchangeRate API that takes two parameters - 'currency_type' and 'time'. The 'currency_type' specifies the type of currency for which the exchange rate is to be queried and the 'time' parameter specifies the date and time at which the exchange rate is to be retrieved.\"",
+            "url": "apis/query_exchange_rate.py",
+            "method": "GET",
+            "responses": {
+                "exchange_rate": {
+                    "type": "float",
+                    "description": "The exchange rate for the specified currency at the given time."
+                }
+            },
+            "name": "QueryExchangeRate"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_30",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "account",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The account for which trade details are to be fetched."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The time period for which trade details are to be fetched. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "token",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The token for API authentication."
+                }
+            ],
+            "description": "\"Query trade details API that takes three parameters - 'account', 'time', and 'token'. The 'account' parameter refers to the account for which trade details are to be fetched. The 'time' parameter specifies a specific time period for which trade details are to be fetched.\"",
+            "url": "apis/query_trade_detail.py",
+            "method": "GET",
+            "responses": {
+                "trade_details": {
+                    "type": "list",
+                    "description": "A list of trade details for the specified account and time period."
+                }
+            },
+            "name": "QueryTradeDetail"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_31",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "stock_code",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The code of the stock."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The time for fetching the stock data. Format: %Y-%m-%d"
+                }
+            ],
+            "description": "\"Query stock API that takes two parameters - 'stock_code' and 'time'. The 'stock_code' parameter refers to the code of the stock and the 'time' parameter specifies the time for fetching the stock data.\"",
+            "url": "apis/query_stock.py",
+            "method": "GET",
+            "responses": {
+                "stock_data": {
+                    "type": "json",
+                    "description": "JSON object containing the stock data."
+                }
+            },
+            "name": "QueryStock"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_32",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "account",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The identifier of the account."
+                }
+            ],
+            "description": "\"API to query account balance. The 'account' parameter refers to the identifier of the account to be queried.\"",
+            "url": "apis/query_balance.py",
+            "method": "GET",
+            "responses": {
+                "balance": {
+                    "type": "float",
+                    "description": "The account balance."
+                }
+            },
+            "name": "QueryBalance"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_33",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The date for which historical events are to be queried. Format: %Y-%m-%d"
+                }
+            ],
+            "description": "\"QueryHistoryToday API takes one parameter 'date'. The parameter 'date' refers to the date for which historical events are to be queried.\"",
+            "url": "apis/query_history_today.py",
+            "method": "GET",
+            "responses": {
+                "events": {
+                    "type": "list",
+                    "description": "List of historical events that occurred on the given date."
+                }
+            },
+            "name": "QueryHistoryToday"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_34",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The keyword to search."
+                }
+            ],
+            "description": "\"API for searching items based on keywords\"",
+            "url": "apis/search_engine.py",
+            "method": "GET",
+            "responses": {
+                "results": {
+                    "type": "list",
+                    "description": "List of items matching the search criteria."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "Status of the API call."
+                }
+            },
+            "name": "SearchEngine"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_35",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The keyword to be searched on Wikipedia."
+                }
+            ],
+            "description": "\"Wikipedia search API that takes one parameter - 'keyword'. The 'keyword' parameter refers to the search term to be looked up on Wikipedia.\"",
+            "url": "apis/wiki.py",
+            "method": "GET",
+            "responses": {
+                "title": {
+                    "type": "str",
+                    "description": "The title of the Wikipedia page matching the search term."
+                },
+                "summary": {
+                    "type": "str",
+                    "description": "The summary of the Wikipedia page matching the search term."
+                },
+                "url": {
+                    "type": "str",
+                    "description": "The URL of the Wikipedia page matching the search term."
+                }
+            },
+            "name": "Wiki"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_36",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The keyword for which the Knowledge Graph is to be generated."
+                }
+            ],
+            "description": "\"A Knowledge Graph API that takes a single parameter - 'keyword'. This API returns a Knowledge Graph for the input keyword.\"",
+            "url": "apis/knowledge_graph.py",
+            "method": "GET",
+            "responses": {
+                "graph": {
+                    "type": "str",
+                    "description": "The generated Knowledge Graph."
+                }
+            },
+            "name": "KnowledgeGraph"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_37",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "query",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The word to search the definition for."
+                }
+            ],
+            "description": "\"API that takes a 'query' parameter as input and retrieves the definition of that word.\"",
+            "url": "apis/dictionary.py",
+            "method": "GET",
+            "responses": {
+                "definition": {
+                    "type": "str",
+                    "description": "The definition of the requested word."
+                }
+            },
+            "name": "Dictionary"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_38",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The keyword search term entered by the user."
+                }
+            ],
+            "description": "\"API for searching products in an ecommerce platform using a keyword search. The API takes one parameter - 'keyword', which refers to the search term entered by the user.\"",
+            "url": "apis/ecommerce_search.py",
+            "method": "GET",
+            "responses": {
+                "results": {
+                    "type": "list",
+                    "description": "List of products matching the search term."
+                }
+            },
+            "name": "EcommerceSearch"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_39",
+        "documentation": {
+            "expressions": "ImageCaption(image: str)",
+            "category": "其他AI模型",
+            "path": "apis/image_caption.py",
+            "parameters": "(image: str)",
+            "name": "ImageCaption",
+            "description": "."
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_40",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "voice_file",
+                    "in": "query",
+                    "schema": {
+                        "type": "object",
+                        "default": null
+                    },
+                    "description": "The audio file containing the spoken words."
+                }
+            ],
+            "description": "\"An API that performs speech recognition on an audio file containing spoken words.\"",
+            "url": "apis/speech_recognition.py",
+            "method": "GET",
+            "responses": {
+                "transcription": {
+                    "type": "str",
+                    "description": "The text transcription of the spoken words"
+                },
+                "confidence": {
+                    "type": "float",
+                    "description": "The confidence level of the transcription (between 0 and 1)"
+                }
+            },
+            "name": "SpeechRecognition"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_41",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "text",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The text to be translated."
+                },
+                {
+                    "name": "source_language",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The language in which the initial text is written. Format: ISO 639 language code"
+                },
+                {
+                    "name": "target_language",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The language to which the text is to be translated. Format: ISO 639 language code"
+                }
+            ],
+            "description": "\"Translate API that takes three parameters - 'text', 'source_language' and 'target_language'. The 'text' parameter is the string that needs to be translated, the 'source_language' parameter is the language in which the initial text is written and the 'target_language' parameter specifies the language to which the text is to be translated.\"",
+            "url": "apis/translate.py",
+            "method": "GET",
+            "responses": {
+                "translated_text": {
+                    "type": "str",
+                    "description": "The string of the translated text."
+                }
+            },
+            "name": "Translate"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_42",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "text",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The original text to be summarized."
+                }
+            ],
+            "description": "\"A text summarization API that takes a 'text' parameter which is the original text to be summarized.\"",
+            "url": "apis/summarization.py",
+            "method": "GET",
+            "responses": {
+                "summary": {
+                    "type": "str",
+                    "description": "The summarized text."
+                }
+            },
+            "name": "Summarization"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_43",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "image",
+                    "in": "query",
+                    "schema": {
+                        "type": "object",
+                        "default": null
+                    },
+                    "description": "The image to be processed."
+                }
+            ],
+            "description": "\"Object Detection API that detects objects in the given image.\"",
+            "url": "apis/object_detection.py",
+            "method": "GET",
+            "responses": {
+                "objects": {
+                    "type": "list",
+                    "description": "A list of objects detected in the image."
+                },
+                "image_size": {
+                    "type": "tuple",
+                    "description": "The height and width of the image."
+                }
+            },
+            "name": "ObjectDetection"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_44",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "table_data",
+                    "in": "query",
+                    "schema": {
+                        "type": "object",
+                        "default": null
+                    },
+                    "description": "The table data to be queried."
+                },
+                {
+                    "name": "question",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The natural language question to be answered based on the table data."
+                }
+            ],
+            "description": "\"A TableQA API that extracts information from a given table based on a given question.\"",
+            "url": "apis/table_qa.py",
+            "method": "GET",
+            "responses": {
+                "answer": {
+                    "type": "str",
+                    "description": "The answer to the question based on the table data."
+                }
+            },
+            "name": "TableQA"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_45",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "document_content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content of the document to be analyzed."
+                },
+                {
+                    "name": "question",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The question to answer from the given document."
+                }
+            ],
+            "description": "\"Document Question Answering (DocumentQA) API to provide answers for questions given a document content.\"",
+            "url": "apis/document_qa.py",
+            "method": "GET",
+            "responses": {
+                "answer": {
+                    "type": "str",
+                    "description": "The answer for the given question."
+                }
+            },
+            "name": "DocumentQA"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_46",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "text_content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The text content that needs to be converted into speech."
+                }
+            ],
+            "description": "\"A text-to-speech generation API that converts the given 'text_content' parameter into an audio file in a speech-like format.\"",
+            "url": "apis/speech_generation.py",
+            "method": "GET",
+            "responses": {
+                "audio_file": {
+                    "type": "file",
+                    "description": "The audio file in a speech-like format."
+                }
+            },
+            "name": "SpeechGeneration"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_47",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "video",
+                    "in": "query",
+                    "schema": {
+                        "type": "object",
+                        "default": null
+                    },
+                    "description": "A video object"
+                }
+            ],
+            "description": "\"An API that takes one parameter -'video'. This API returns a description of the video passed as a parameter.\"",
+            "url": "apis/video_description.py",
+            "method": "GET",
+            "responses": {
+                "description": {
+                    "type": "str",
+                    "description": "A textual description of the video"
+                }
+            },
+            "name": "VideoDescription"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_48",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "paper_content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content of the research paper."
+                }
+            ],
+            "description": "\"An API that generates a summary of a research paper using the 'paper_content' parameter.\"",
+            "url": "apis/paper_summary.py",
+            "method": "GET",
+            "responses": {
+                "summary": {
+                    "type": "str",
+                    "description": "The generated summary of the research paper."
+                }
+            },
+            "name": "PaperSummary"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_49",
+        "documentation": {
+            "category": "对外影响 - 实时通信",
+            "parameters": [
+                {
+                    "name": "recipient",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The recipient of the message."
+                },
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content of the message."
+                },
+                {
+                    "name": "attachment",
+                    "in": "query",
+                    "schema": {
+                        "type": "object",
+                        "default": null
+                    },
+                    "description": "The attachment of the message (if any)."
+                }
+            ],
+            "description": "\"Send message API that allows you to send a message to a recipient with a specified content and attachment (if applicable).\"",
+            "url": "apis/send_message.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or error message."
+                }
+            },
+            "name": "SendMessage"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_50",
+        "documentation": {
+            "category": "对外影响 - 实时通信",
+            "parameters": [
+                {
+                    "name": "recipient",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The recipient of the IM message."
+                },
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content of the IM message."
+                }
+            ],
+            "description": "\"Send an IM API that takes two parameters - 'recipient' and 'content'. The 'recipient' parameter refers to the recipient of the message and the 'content' parameter specifies the content of the message.\"",
+            "url": "apis/send_im.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "SendIM"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_51",
+        "documentation": {
+            "category": "对外影响 - 实时通信",
+            "parameters": [
+                {
+                    "name": "recipient",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The email address of the recipient."
+                },
+                {
+                    "name": "subject",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The subject of the email."
+                },
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content or body of the email."
+                }
+            ],
+            "description": "\"Send email to a recipient with specified subject and content.\"",
+            "url": "apis/send_email.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or failed"
+                }
+            },
+            "name": "SendEmail"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_52",
+        "documentation": {
+            "category": "对外影响 - 实时通信",
+            "parameters": [],
+            "description": "\"Receive email notification API, without any input parameter.\"",
+            "url": "apis/receive_email.py",
+            "method": "GET",
+            "responses": {
+                "email_info": {
+                    "type": "dict",
+                    "description": "Dictionary that contains the details of the email."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ReceiveEmail"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_53",
+        "documentation": {
+            "category": "获取信息 - 工具",
+            "parameters": [
+                {
+                    "name": "infix_expression",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "A string representing an arithmetic expression in infix notation."
+                }
+            ],
+            "description": "\"An API to perform arithmetic calculations on an infix expression.\"",
+            "url": "apis/calculator.py",
+            "method": "GET",
+            "responses": {
+                "result": {
+                    "type": "float/int",
+                    "description": "Result of the arithmetic expression."
+                }
+            },
+            "name": "Calculator"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_54",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "order_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The unique identifier for the order."
+                },
+                {
+                    "name": "courier_company",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the courier company handling the delivery."
+                }
+            ],
+            "description": "\"API to query the shipment tracking details of an order based on the order number and the name of the courier company who is handling the delivery.\"",
+            "url": "apis/express_query.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Status of the shipment tracking."
+                },
+                "last_updated_time": {
+                    "type": "str",
+                    "description": "The timestamp when the shipment tracking was last updated. Format: %Y-%m-%d %H:%M:%S"
+                },
+                "current_location": {
+                    "type": "str",
+                    "description": "The current location of the shipment."
+                },
+                "estimated_delivery_date": {
+                    "type": "str",
+                    "description": "The estimated date of delivery for the shipment. Format: %Y-%m-%d"
+                }
+            },
+            "name": "ExpressQuery"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_55",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The ID of the user whose health data is to be retrieved."
+                },
+                {
+                    "name": "time_period",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The time period for which health data is required in the format %Y-%m-%d to %Y-%m-%d"
+                }
+            ],
+            "description": "\"API that retrieves the health data of a user for a specific time period. The 'user_id' parameter is used to identify the user for whom the data is to be fetched and the 'time_period' parameter specifies the time range for which the data should be retrieved.\"",
+            "url": "apis/query_health_data.py",
+            "method": "GET",
+            "responses": {
+                "data": {
+                    "type": "list of dictionaries",
+                    "description": "The health data of the user for the specified time period."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "Success or failure of the API call."
+                }
+            },
+            "name": "QueryHealthData"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_56",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "symptom_description",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "A description of the symptoms being experienced."
+                }
+            ],
+            "description": "\"An API that searches for medical conditions based on symptom descriptions.\"",
+            "url": "apis/symptom_search.py",
+            "method": "GET",
+            "responses": {
+                "medical_conditions": {
+                    "type": "list",
+                    "description": "A list of medical conditions that match the given symptom description."
+                }
+            },
+            "name": "SymptomSearch"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_57",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "disease_injury_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the disease or injury for which emergency knowledge is required."
+                }
+            ],
+            "description": "\"An API that provides information about emergency procedures and first aid activities related to a particular disease or injury. Takes one input parameter - 'disease_injury_name', which is a string referring to the name of the injury or disease for which the user needs emergency knowledge.\"",
+            "url": "apis/emergency_knowledge.py",
+            "method": "GET",
+            "responses": {
+                "emergency_procedures": {
+                    "type": "str",
+                    "description": "Emergency procedures for the specified disease or injury."
+                },
+                "first_aid_activities": {
+                    "type": "str",
+                    "description": "First aid activities for the specified disease or injury."
+                }
+            },
+            "name": "EmergencyKnowledge"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_58",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "patient_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the patient who wants to register an appointment."
+                },
+                {
+                    "name": "doctor_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the doctor who will take the appointment."
+                },
+                {
+                    "name": "appointment_time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The date and time of the appointment. Format: %Y-%m-%d %H:%M:%S"
+                }
+            ],
+            "description": "\"Register an appointment API that takes three parameters - 'patient_name', 'doctor_name', and 'appointment_time'. The 'patient_name' parameter refers to the name of the patient who wants to register an appointment, 'doctor_name' refers to the name of the doctor who will take the appointment, and 'appointment_time' specifies the date and time of the appointment.\"",
+            "url": "apis/appointment_registration.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "AppointmentRegistration"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_59",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "registration_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The registration number of the conference registration to be cancelled."
+                }
+            ],
+            "description": "\"Cancel a registration API that takes one parameter - 'registration_number'. The 'registration_number' parameter refers to the registration number of the conference registration that needs to be cancelled.\"",
+            "url": "apis/cancel_registration.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed."
+                }
+            },
+            "name": "CancelRegistration"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_60",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "registration_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The identification number of the registration to be updated."
+                },
+                {
+                    "name": "new_appointment_time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The new time for the updated registration appointment. Format: %Y-%m-%d %H:%M:%S"
+                }
+            ],
+            "description": "\"Modify Registration API that takes two parameters - 'registration_number' and 'new_appointment_time'. The 'registration_number' parameter refers to the identification number of the registration to be updated, and the 'new_appointment_time' parameter specifies the new time for the updated registration appointment.\"",
+            "url": "apis/modify_registration.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ModifyRegistration"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_61",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "patient_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the patient who has made the appointment."
+                },
+                {
+                    "name": "appointment_time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The time of the appointment. Format: %Y-%m-%d %H:%M:%S"
+                }
+            ],
+            "description": "\"Query registration API that takes two parameters - 'patient_name' and 'appointment_time'. The 'patient_name' parameter refers to the name of the patient who has made the appointment and the 'appointment_time' parameter specifies the time of the appointment.\"",
+            "url": "apis/query_registration.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                },
+                "registration_details": {
+                    "type": "str",
+                    "description": "Details of the patient registration."
+                }
+            },
+            "name": "QueryRegistration"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_62",
+        "documentation": {
+            "category": "对外影响 - 数据库操作",
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The unique identifier of the user whose health history is being recorded."
+                },
+                {
+                    "name": "date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The date when the data was recorded. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "health_data",
+                    "in": "query",
+                    "schema": {
+                        "type": "object",
+                        "default": null
+                    },
+                    "description": "The data that was recorded."
+                }
+            ],
+            "description": "\"Record health history API that takes in three parameters - 'user_id', 'date', and 'health_data'. The 'user_id' parameter refers to the unique identifier of the user whose health history is being recorded. The 'date' parameter specifies the date when the data was recorded. The 'health_data' parameter specifies the data that was recorded, which is an object.\"",
+            "url": "apis/record_health_data.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "RecordHealthData"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_63",
+        "documentation": {
+            "category": "对外影响 - 实时通信",
+            "parameters": [
+                {
+                    "name": "device_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The unique identifier of the device."
+                },
+                {
+                    "name": "command",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The command to be executed on the device."
+                }
+            ],
+            "description": "\"Control a device API that takes two parameters - 'device_id' and 'command'. The 'device_id' parameter refers to the unique identifier of the device and the 'command' parameter specifies the action to be performed on the device.\"",
+            "url": "apis/control_device.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ControlDevice"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_64",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "scene_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the scene."
+                },
+                {
+                    "name": "device_list",
+                    "in": "query",
+                    "schema": {
+                        "type": "List[str]",
+                        "default": null
+                    },
+                    "description": "List of devices included in the scene."
+                }
+            ],
+            "description": "\"Add a scene API that takes two parameters - 'scene_name' and 'device_list'. The 'scene_name' parameter refers to the name of the scene and the 'device_list' parameter specifies the list of devices that are included in the scene.\"",
+            "url": "apis/add_scene.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "AddScene"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_65",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "scene_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the scene to be deleted."
+                }
+            ],
+            "description": "\"Delete a scene API that takes one parameter - 'scene_name'. The 'scene_name' parameter refers to the name of the scene that needs to be deleted.\"",
+            "url": "apis/delete_scene.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "DeleteScene"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_66",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "scene_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the scene that needs to be modified."
+                },
+                {
+                    "name": "new_device_list",
+                    "in": "query",
+                    "schema": {
+                        "type": "list",
+                        "default": null
+                    },
+                    "description": "A list of strings containing the new device names to be added to the scene."
+                }
+            ],
+            "description": "\"ModifyScene API that takes two parameters - 'scene_name' and 'new_device_list'. The 'scene_name' parameter specifies the name of the scene which needs to be modified and the 'new_device_list' parameter is a list of strings containing the names of the new devices that will replace the old ones in the scene.\"",
+            "url": "apis/modify_scene.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or Failed"
+                }
+            },
+            "name": "ModifyScene"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_67",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "scene_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the scene to be queried."
+                }
+            ],
+            "description": "\"API to query a specific 'scene' by providing a 'scene_name'.\"",
+            "url": "apis/query_scene.py",
+            "method": "GET",
+            "responses": {
+                "scene_info": {
+                    "type": "dict",
+                    "description": "A dictionary containing the information about the queried scene."
+                }
+            },
+            "name": "QueryScene"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_68",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "device_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "ID of the device on which to schedule a timed switch"
+                },
+                {
+                    "name": "switch_time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "Time at which to execute the on/off command. Format: %Y-%m-%d %H:%M:%S"
+                },
+                {
+                    "name": "on_off_command",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The command to execute when the switch time is reached. Should be on or off."
+                }
+            ],
+            "description": "\"API for scheduling a timed switch. Sets a switch-time for the specified device-id and executes an on/off command at the specified time.\"",
+            "url": "apis/timed_switch.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or failed"
+                }
+            },
+            "name": "TimedSwitch"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_69",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "device_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The ID of the device for which the timed switch needs to be cancelled."
+                },
+                {
+                    "name": "switch_time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The time of the scheduled switch. Format: %Y-%m-%d %H:%M:%S"
+                }
+            ],
+            "description": "\"API for canceling a timed switch on a device using its 'device ID' and 'switch time' input parameters.\"",
+            "url": "apis/cancel_timed_switch.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "The status of the API call - success or failed."
+                }
+            },
+            "name": "CancelTimedSwitch"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_70",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "device_type",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The type of the device to be queried."
+                },
+                {
+                    "name": "room",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The room where the device is located."
+                }
+            ],
+            "description": "\"Smart home query API that takes two parameters - 'device_type' and 'room'. The 'device_type' parameter refers to the type of the device to be queried and the 'room' parameter specifies the room where the device is located.\"",
+            "url": "apis/query_smart_home.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                },
+                "result": {
+                    "type": "str",
+                    "description": "The query result for the specified device."
+                }
+            },
+            "name": "QuerySmartHome"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_71",
+        "documentation": {
+            "category": "对外影响 - 实时通信",
+            "parameters": [
+                {
+                    "name": "song_playlist_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the playlist to be played."
+                },
+                {
+                    "name": "source",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The location of the music files on the system."
+                }
+            ],
+            "description": "\"Play Music API that takes two parameters - 'song_playlist_name' and 'source'. The 'song_playlist_name' parameter refers to the name of the playlist which contains the songs to be played and the 'source' parameter specifies the location of the music files on the system.\"",
+            "url": "apis/play_music.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "PlayMusic"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_72",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The search keyword for movies or music."
+                },
+                {
+                    "name": "type",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The type of search - movies or music."
+                },
+                {
+                    "name": "year",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The year of the movie or music release."
+                }
+            ],
+            "description": "\"Search for movies or music API that takes three parameters - 'keyword', 'type', and 'year'. The 'keyword' parameter refers to the search term for either movies or music. The 'type' parameter specifies whether the API should search for movies or music, and the 'year' parameter filters the results by the year.\"",
+            "url": "apis/search_movie_music.py",
+            "method": "GET",
+            "responses": {
+                "result": {
+                    "type": "list",
+                    "description": "The list of search results."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "Success or failed."
+                }
+            },
+            "name": "SearchMovieMusic"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_73",
+        "documentation": {
+            "category": "其他AI模型",
+            "parameters": [
+                {
+                    "name": "audio_file",
+                    "in": "query",
+                    "schema": {
+                        "type": "object",
+                        "default": null
+                    },
+                    "description": "Audio file (.wav or .mp3) containing the recording of the song to be identified."
+                }
+            ],
+            "description": "\"Identify Song API that takes one parameter - 'audio_file'. The 'audio_file' parameter should be a .wav or .mp3 file containing the audio recording of the song that needs to be identified.\"",
+            "url": "apis/identify_song.py",
+            "method": "GET",
+            "responses": {
+                "song_name": {
+                    "type": "str",
+                    "description": "The name of the identified song."
+                },
+                "artist": {
+                    "type": "str",
+                    "description": "The name of the artist who performs the song."
+                },
+                "album": {
+                    "type": "str",
+                    "description": "The name of the album from which the song is taken (if available)."
+                },
+                "year": {
+                    "type": "str",
+                    "description": "The year the song was released (if available)."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "Success or failed."
+                }
+            },
+            "name": "IdentifySong"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_74",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "attraction_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the attraction."
+                },
+                {
+                    "name": "ticket_type",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The type of ticket to be purchased."
+                },
+                {
+                    "name": "quantity",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The number of tickets to be booked."
+                },
+                {
+                    "name": "reservation_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The desired date of reservation. Format: %Y-%m-%d"
+                }
+            ],
+            "description": "\"Book a ticket API that takes four parameters - 'attraction_name', 'ticket_type', 'quantity', 'reservation_date'. The 'attraction_name' parameter refers to the selected attraction name, 'ticket_type' parameter specifies the type of ticket purchased, 'quantity' parameter refers to the quantity of tickets purchased, and the 'reservation_date' parameter specifies the desired date of reservation.\"",
+            "url": "apis/book_ticket.py",
+            "method": "GET",
+            "responses": {
+                "booking_id": {
+                    "type": "str",
+                    "description": "The booking ID for the reservation."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "The status of the booking request."
+                }
+            },
+            "name": "BookTicket"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_75",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "order_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The unique identifier of the ticket to be cancelled."
+                }
+            ],
+            "description": "\"An API that cancels a ticket and takes one parameter - 'order_number', which refers to the unique identifier of the ticket to be cancelled.\"",
+            "url": "apis/cancel_ticket.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Indicates if the ticket was successfully cancelled or not."
+                }
+            },
+            "name": "CancelTicket"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_76",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "order_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The order number for which reservation date needs to be updated."
+                },
+                {
+                    "name": "new_reservation_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The new reservation date. Format: %Y-%m-%d %H:%M:%S"
+                }
+            ],
+            "description": "\"ModifyTicket API that updates the reservation date for a given order number.\"",
+            "url": "apis/modify_ticket.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or Failed"
+                }
+            },
+            "name": "ModifyTicket"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_77",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The unique identifier of the user for whom the ticket needs to be queried."
+                }
+            ],
+            "description": "\"Query ticket API that takes one parameter - 'user_id'. The 'user_id' parameter refers to the unique identifier of the user for whom the ticket needs to be queried.\"",
+            "url": "apis/query_ticket.py",
+            "method": "GET",
+            "responses": {
+                "ticket_information": {
+                    "type": "str",
+                    "description": "The information about the ticket for the user_id."
+                }
+            },
+            "name": "QueryTicket"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_78",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "origin",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The starting location for navigation."
+                },
+                {
+                    "name": "destination",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The endpoint for navigation."
+                },
+                {
+                    "name": "transportation_mode",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The mode of transportation. Examples: driving, walking, bicycling, transit"
+                }
+            ],
+            "description": "\"Navigation API that takes three parameters - 'origin', 'destination', and 'transportation_mode'. The 'origin' parameter refers to the starting location for the navigation, 'destination' parameter refers to the endpoint, and 'transportation_mode' parameter specifies the mode of transportation.\"",
+            "url": "apis/navigation.py",
+            "method": "GET",
+            "responses": {
+                "route": {
+                    "type": "str",
+                    "description": "The suggested route for navigation."
+                },
+                "time": {
+                    "type": "str",
+                    "description": "The estimated time of arrival in HH:MM format."
+                }
+            },
+            "name": "Navigation"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_79",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The keyword to search for in the places."
+                },
+                {
+                    "name": "location",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The location to search in. Format: latitude,longitude."
+                },
+                {
+                    "name": "category",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The category of the place to search for."
+                }
+            ],
+            "description": "\"API to search places based on the given keywords, location and category.\"",
+            "url": "apis/query_places.py",
+            "method": "GET",
+            "responses": {
+                "places": {
+                    "type": "list",
+                    "description": "A list of places matching the query."
+                }
+            },
+            "name": "QueryPlaces"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_80",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "location",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The latitude and longitude of the center of the search. Format: latitude, longitude."
+                },
+                {
+                    "name": "radius",
+                    "in": "query",
+                    "schema": {
+                        "type": "float",
+                        "default": null
+                    },
+                    "description": "The radius in meters of the search area."
+                },
+                {
+                    "name": "category",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The category of the location to search for."
+                }
+            ],
+            "description": "\"API to search for nearby locations based on the provided location, radius and category parameters. The 'location' parameter specifies the latitude and longitude of the center of the search. The 'radius' parameter defines the distance in meters from the center of the search area. The 'category' parameter is used to filter the search results by specific categories such as restaurants, cafes, or hotels.\"",
+            "url": "apis/search_around.py",
+            "method": "GET",
+            "responses": {
+                "locations": {
+                    "type": "list",
+                    "description": "List of locations matching the search criteria."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "Indicates whether the search was successful or not."
+                }
+            },
+            "name": "SearchAround"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_81",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "destination",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The location for the hotel"
+                },
+                {
+                    "name": "check_in_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The date on which the hotel check-in is to be made. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "check_out_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The date on which the hotel checkout has to be made. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "room_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The total number of rooms required."
+                },
+                {
+                    "name": "adult_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The number of adults staying in the hotel."
+                },
+                {
+                    "name": "child_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The number of children staying in the hotel."
+                }
+            ],
+            "description": "\"Query hotel API that takes six parameters; 'destination' specifies the location for the hotel, 'check_in_date' refers to the date on which the hotel check-in is to be made, 'check_out_date' refers to the date on which the hotel checkout has to be made, 'room_count' specifies the total number of rooms required, 'adult_count' specifies the number of adults and 'child_count' specifies the number of children staying in the hotel.\"",
+            "url": "apis/query_hotel.py",
+            "method": "GET",
+            "responses": {
+                "hotels": {
+                    "type": "list",
+                    "description": "List containing details of all the available hotels."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "Success or failed."
+                }
+            },
+            "name": "QueryHotel"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_82",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "location",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The location for which to query the weather forecast."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The time for which to query the weather forecast."
+                }
+            ],
+            "description": "\"API to query the weather forecast for a specified location and time.\"",
+            "url": "apis/query_weather.py",
+            "method": "GET",
+            "responses": {
+                "temperature": {
+                    "type": "float",
+                    "description": "The temperature at the specified location and time."
+                },
+                "humidity": {
+                    "type": "float",
+                    "description": "The humidity at the specified location and time."
+                },
+                "wind_speed": {
+                    "type": "float",
+                    "description": "The wind speed at the specified location and time."
+                },
+                "description": {
+                    "type": "str",
+                    "description": "A textual description of the weather conditions at the specified location and time."
+                }
+            },
+            "name": "QueryWeather"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_83",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "hotel_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "Name of the hotel"
+                },
+                {
+                    "name": "check_in_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The check-in date. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "check_out_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The check-out date. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "room_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "Number of rooms required for stay"
+                },
+                {
+                    "name": "adult_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "Number of adults staying in the hotel"
+                },
+                {
+                    "name": "child_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "Number of children staying in the hotel"
+                }
+            ],
+            "description": "\"Book a hotel API that takes multiple parameters such as 'hotel_name', 'check_in_date', 'check_out_date', 'room_count', 'adult_count', 'child_count'. The 'check_in_date' parameter is the date when the guest is supposed to arrive at the hotel, the 'check_out_date' parameter is the date when the guest is supposed to leave the hotel, 'room_count' parameter is the number of rooms required, 'adult_count' parameter is the count of adults and 'child_count' parameter is the count of children staying in the hotel.\"",
+            "url": "apis/book_hotel.py",
+            "method": "GET",
+            "responses": {
+                "booking_status": {
+                    "type": "str",
+                    "description": "Status of the booking. eg. success, failed"
+                },
+                "booking_reference": {
+                    "type": "str",
+                    "description": "Booking reference code for the hotel reserved."
+                },
+                "total_cost": {
+                    "type": "str",
+                    "description": "Total cost of the stay in US Dollars(USD)."
+                }
+            },
+            "name": "BookHotel"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_84",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "order_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The unique identifier of the hotel reservation."
+                }
+            ],
+            "description": "\"Cancel a hotel booking API that takes one parameter - 'order_number'. The 'order_number' parameter refers to the unique identifier of the reservation to be canceled.\"",
+            "url": "apis/cancel_hotel_booking.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or failed."
+                },
+                "refund_amount": {
+                    "type": "float",
+                    "description": "The amount to be refunded as per the cancellation policy."
+                }
+            },
+            "name": "CancelHotelBooking"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_85",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "order_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The order number of the hotel booking"
+                },
+                {
+                    "name": "new_check_in_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The new check-in date for the booking. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "new_check_out_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The new check-out date for the booking. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "new_room_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The new number of rooms needed for the booking"
+                },
+                {
+                    "name": "new_adult_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The new number of adults for the booking"
+                },
+                {
+                    "name": "new_child_count",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The new number of children for the booking"
+                }
+            ],
+            "description": "\"Modify Hotel Booking API that takes the order number and allows the user to modify their hotel booking by changing the check-in and check-out dates, room count, and the number of adults and children.\"",
+            "url": "apis/modify_hotel_booking.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or failure status message"
+                }
+            },
+            "name": "ModifyHotelBooking"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_86",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The unique identifier of the user whose hotel bookings are to be queried."
+                }
+            ],
+            "description": "\"Query hotel bookings API that takes one parameter - 'user_id'. The 'user_id' parameter refers to the unique identifier of the user whose hotel bookings are to be queried.\"",
+            "url": "apis/query_hotel_booking.py",
+            "method": "GET",
+            "responses": {
+                "bookings": {
+                    "type": "list",
+                    "description": "A list of dictionary objects containing the details of the hotel bookings."
+                }
+            },
+            "name": "QueryHotelBooking"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_87",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 增",
+            "parameters": [
+                {
+                    "name": "origin",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The origin station for the train journey."
+                },
+                {
+                    "name": "destination",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The destination station for the train journey."
+                },
+                {
+                    "name": "date",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The date of the train journey. Format: %Y-%m-%d"
+                },
+                {
+                    "name": "train_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The number of the train."
+                },
+                {
+                    "name": "seat_type",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The seat type. Options: First class, Second class."
+                },
+                {
+                    "name": "passenger_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the passenger."
+                }
+            ],
+            "description": "\"A API to buy train tickets that takes six parameters. 'origin' parameter refers to the station from which the train will depart, 'destination' parameter refers to the station at which the train will arrive, 'date' parameter specifies the date of the journey, 'train_number' parameter contains the train number, 'seat_type' parameter specifies the type of seat and 'passenger_name' parameter refers to the name of the passenger.\"",
+            "url": "apis/buy_train_ticket.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success/failure"
+                },
+                "ticket_number": {
+                    "type": "str",
+                    "description": "The ticket number."
+                },
+                "seat_number": {
+                    "type": "str",
+                    "description": "The seat number."
+                },
+                "departure_time": {
+                    "type": "str",
+                    "description": "The departure time of the train."
+                }
+            },
+            "name": "BuyTrainTicket"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_88",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 删",
+            "parameters": [
+                {
+                    "name": "order_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The order number of the train ticket."
+                }
+            ],
+            "description": "\"Cancel a train ticket API that takes one parameter - 'order_number'. The 'order_number' parameter refers to the unique identifier of the train ticket order.\"",
+            "url": "apis/cancel_train_ticket.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "CancelTrainTicket"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_89",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 改",
+            "parameters": [
+                {
+                    "name": "order_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The order number of the train ticket."
+                },
+                {
+                    "name": "new_date",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The new date of the train journey. Format: %Y-%m-%d %H:%M:%S"
+                },
+                {
+                    "name": "new_train_number",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The new train number to modify."
+                },
+                {
+                    "name": "new_seat_type",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The new type of seat to modify."
+                }
+            ],
+            "description": "\"Modify Train Ticket API allows users to modify their train ticket order with specified 'order_number'. The API takes in four parameters - 'new_date', 'new_train_number', 'new_seat_type'. The 'new_date' parameter refers to the new date of the train journey, the 'new_train_number' parameter specifies the new train number, and the 'new_seat_type' parameter specifies the new type of seat.\"",
+            "url": "apis/modify_train_ticket.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ModifyTrainTicket"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_90",
+        "documentation": {
+            "category": "对外影响 - 数据库操作 - 查",
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The user id of the user."
+                }
+            ],
+            "description": "\"Query Train Ticket API that takes one parameter - 'user_id'. It retrieves information about train tickets booked by the user.\"",
+            "url": "apis/query_train_ticket.py",
+            "method": "GET",
+            "responses": {
+                "ticket_info": {
+                    "type": "list",
+                    "description": "A list of dictionaries containing the information about booked tickets."
+                }
+            },
+            "name": "QueryTrainTicket"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_91",
+        "documentation": {
+            "category": "对外影响 - 数据库操作",
+            "parameters": [
+                {
+                    "name": "date",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The date for which scheduling operations to be performed."
+                },
+                {
+                    "name": "schedule_list",
+                    "in": "query",
+                    "schema": {
+                        "type": "list",
+                        "default": null
+                    },
+                    "description": "List of objects containing details of scheduled events."
+                }
+            ],
+            "description": "\"A scheduling API that enables user to add or modify events on a particular date. The API takes two inputs - 'date' and 'schedule_list'. The 'date' parameter specifies the date for which the user wants to perform scheduling operations. The 'schedule_list' parameter is a list of objects, each containing details of the scheduled event like name, start and end time, description, location, etc.\"",
+            "url": "apis/schedule.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Indicates whether scheduling operation was successful or not."
+                }
+            },
+            "name": "Schedule"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_92",
+        "documentation": {
+            "category": "对外影响 - 数据库操作",
+            "parameters": [
+                {
+                    "name": "content",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The content/description of the memo."
+                },
+                {
+                    "name": "time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The time when the memo is created. Format: %Y-%m-%d %H:%M:%S"
+                },
+                {
+                    "name": "location",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The location where the memo is created."
+                },
+                {
+                    "name": "reminder_time",
+                    "in": "query",
+                    "schema": {
+                        "type": "datetime",
+                        "default": null
+                    },
+                    "description": "The time when the user wishes to be reminded of the memo. Format: %Y-%m-%d %H:%M:%S"
+                }
+            ],
+            "description": "\"A memo API that takes four parameters - 'content', 'time', 'location' and 'reminder_time'. The 'content' parameter refers to the description of the memo, the 'time' parameter specifies the time at which the memo was created, the 'location' parameter specifies the location where the memo was created, and the 'reminder_time' parameter specifies the time at which the user wishes to be reminded of the memo.\"",
+            "url": "apis/memo.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "Success or failed."
+                }
+            },
+            "name": "Memo"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_93",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "Keyword to search for books."
+                },
+                {
+                    "name": "author",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "Author name to filter the list of book results."
+                }
+            ],
+            "description": "\"Search book API that takes two parameters - 'keyword' and 'author'. 'keyword' is used to search for books by keyword and 'author' is used to filter the list of results by author.\"",
+            "url": "apis/search_book.py",
+            "method": "GET",
+            "responses": {
+                "books": {
+                    "type": "list",
+                    "description": "List of books that match the search criteria."
+                }
+            },
+            "name": "SearchBook"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_94",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The topic or title of the course."
+                },
+                {
+                    "name": "lecturer",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the instructor."
+                },
+                {
+                    "name": "type",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The type of course, such as beginner, intermediate, or advanced level courses. This is an optional parameter."
+                }
+            ],
+            "description": "\"Search for online courses API that takes three optional parameters - 'keyword', 'lecturer', and 'type'. The 'keyword' parameter refers to the topic or title of the course, the 'lecturer' parameter refers to the name of the instructor, and the 'type' parameter specifies the type of course, such as beginner, intermediate, or advanced level courses.\"",
+            "url": "apis/online_course_search.py",
+            "method": "GET",
+            "responses": {
+                "courses": {
+                    "type": "list",
+                    "description": "A list of courses matching the search criteria."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "OnlineCourseSearch"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_95",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "exam_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the exam."
+                },
+                {
+                    "name": "exam_time",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The time for the exam. Format: %Y-%m-%d %H:%M:%S"
+                }
+            ],
+            "description": "\"API to schedule an exam, taking parameters 'exam_name' and 'exam_time'. The 'exam_name' parameter determines the name of the exam, and the 'exam_time' parameter determines the time at which the exam is scheduled.\"",
+            "url": "apis/exam_schedule.py",
+            "method": "GET",
+            "responses": {
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "ExamSchedule"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_96",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "meeting_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the conference or a keyword that refers to the conference."
+                }
+            ],
+            "description": "\"An API to search for conferences related to artificial intelligence based on the 'meeting_name' parameter passed.\"",
+            "url": "apis/ai_conference_search.py",
+            "method": "GET",
+            "responses": {
+                "conference_details": {
+                    "type": "list",
+                    "description": "The list of conferences found based on the input parameter."
+                }
+            },
+            "name": "AIConferenceSearch"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_97",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The job title or industry to search for."
+                },
+                {
+                    "name": "location",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The location of the job."
+                },
+                {
+                    "name": "work_experience",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The level of work experience required for the job (e.g. entry-level, mid-level, senior-level)."
+                }
+            ],
+            "description": "\"A JobSearch API that returns available jobs based on provided search parameters - 'keyword', 'location', and 'work_experience'. The 'keyword' parameter refers to the job title or industry, the 'location' parameter specifies the location of the job, and the 'work_experience' parameter indicates the level of experience required for the job.\"",
+            "url": "apis/job_search.py",
+            "method": "GET",
+            "responses": {
+                "jobs": {
+                    "type": "list",
+                    "description": "A list of available jobs that match the search parameters."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "JobSearch"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_98",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "company_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the requested company."
+                },
+                {
+                    "name": "year",
+                    "in": "query",
+                    "schema": {
+                        "type": "int",
+                        "default": null
+                    },
+                    "description": "The year for which the annual report is requested."
+                }
+            ],
+            "description": "\"Retrieves the annual report of a company for a particular year based on the provided parameters.\"",
+            "url": "apis/company_annual_report.py",
+            "method": "GET",
+            "responses": {
+                "report": {
+                    "type": "file",
+                    "description": "The annual report of the requested company for the specified year."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "Success if the report is found or Failed if the report does not exist for the specified year."
+                }
+            },
+            "name": "CompanyAnnualReport"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_99",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "company_name",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The name of the company."
+                }
+            ],
+            "description": "\"Retrieve the business scope of a company using the company name.\"",
+            "url": "apis/company_business_scope.py",
+            "method": "GET",
+            "responses": {
+                "business_scope": {
+                    "type": "str",
+                    "description": "The business scope of the specified company."
+                }
+            },
+            "name": "CompanyBusinessScope"
+        },
+        "type": "web"
+    },
+    {
+        "id": "apibank_tool_100",
+        "documentation": {
+            "category": "获取信息 - 数据库查询",
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The keyword to search for the job."
+                },
+                {
+                    "name": "location",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The location for the job search."
+                },
+                {
+                    "name": "position",
+                    "in": "query",
+                    "schema": {
+                        "type": "str",
+                        "default": null
+                    },
+                    "description": "The position to search for."
+                }
+            ],
+            "description": "\"Search recruitment information API that takes three parameters - 'keyword', 'location', and 'position'. The 'keyword' parameter is to search for the job, 'location' parameter is to search job location, and the 'position' parameter is to specify the desired position title.\"",
+            "url": "apis/recruitment_information.py",
+            "method": "GET",
+            "responses": {
+                "data": {
+                    "type": "list",
+                    "description": "A list of dictionaries containing the recruitment information."
+                },
+                "status": {
+                    "type": "str",
+                    "description": "success or failed"
+                }
+            },
+            "name": "RecruitmentInformation"
+        },
+        "type": "web"
+    }
+]
